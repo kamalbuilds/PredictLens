@@ -1,0 +1,3731 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "d9c1e23d36a1e0b4d6ce182f555b9fbd1a0748939959184432f3902b92479c2a",
+          "withoutMetadata": "d9c1e23d36a1e0b4d6ce182f555b9fbd1a0748939959184432f3902b92479c2a",
+          "linkedWithoutMetadata": "d9c1e23d36a1e0b4d6ce182f555b9fbd1a0748939959184432f3902b92479c2a"
+        },
+        "inherit": [
+          "contracts/interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "53e39eac017afc257cd05e65f23dfad306e7241c90ef5b8db58c720d78f2bfa3",
+          "withoutMetadata": "53e39eac017afc257cd05e65f23dfad306e7241c90ef5b8db58c720d78f2bfa3",
+          "linkedWithoutMetadata": "53e39eac017afc257cd05e65f23dfad306e7241c90ef5b8db58c720d78f2bfa3"
+        },
+        "inherit": [
+          "contracts/interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "592dae8ca4ccf6b4c0ed6ef3c1098fcedf6108804ee7cd5ae9a10f7a9464c6f2",
+          "withoutMetadata": "592dae8ca4ccf6b4c0ed6ef3c1098fcedf6108804ee7cd5ae9a10f7a9464c6f2",
+          "linkedWithoutMetadata": "592dae8ca4ccf6b4c0ed6ef3c1098fcedf6108804ee7cd5ae9a10f7a9464c6f2"
+        },
+        "inherit": [
+          "contracts/interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "d9c1e23d36a1e0b4d6ce182f555b9fbd1a0748939959184432f3902b92479c2a",
+          "withoutMetadata": "d9c1e23d36a1e0b4d6ce182f555b9fbd1a0748939959184432f3902b92479c2a",
+          "linkedWithoutMetadata": "d9c1e23d36a1e0b4d6ce182f555b9fbd1a0748939959184432f3902b92479c2a"
+        },
+        "inherit": [
+          "contracts/interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "53e39eac017afc257cd05e65f23dfad306e7241c90ef5b8db58c720d78f2bfa3",
+          "withoutMetadata": "53e39eac017afc257cd05e65f23dfad306e7241c90ef5b8db58c720d78f2bfa3",
+          "linkedWithoutMetadata": "53e39eac017afc257cd05e65f23dfad306e7241c90ef5b8db58c720d78f2bfa3"
+        },
+        "inherit": [
+          "contracts/interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "592dae8ca4ccf6b4c0ed6ef3c1098fcedf6108804ee7cd5ae9a10f7a9464c6f2",
+          "withoutMetadata": "592dae8ca4ccf6b4c0ed6ef3c1098fcedf6108804ee7cd5ae9a10f7a9464c6f2",
+          "linkedWithoutMetadata": "592dae8ca4ccf6b4c0ed6ef3c1098fcedf6108804ee7cd5ae9a10f7a9464c6f2"
+        },
+        "inherit": [
+          "contracts/interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "withoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "linkedWithoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "withoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "linkedWithoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "withoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "linkedWithoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/IPostAction.sol:IPostAction": {
+        "src": "interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/Types.sol:Types": {
+        "src": "interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "withoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "linkedWithoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "withoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "linkedWithoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "withoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "linkedWithoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "withoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "linkedWithoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/IPostAction.sol:IPostAction": {
+        "src": "interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/Types.sol:Types": {
+        "src": "interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "withoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "linkedWithoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "withoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "linkedWithoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "withoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "linkedWithoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "withoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "linkedWithoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/IPostAction.sol:IPostAction": {
+        "src": "interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/Types.sol:Types": {
+        "src": "interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "withoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "linkedWithoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "withoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "linkedWithoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "withoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "linkedWithoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "withoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "linkedWithoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/IPostAction.sol:IPostAction": {
+        "src": "interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/Types.sol:Types": {
+        "src": "interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "withoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "linkedWithoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    },
+    {
+      "@openzeppelin/contracts/interfaces/IERC1363.sol:IERC1363": {
+        "src": "@openzeppelin/contracts/interfaces/IERC1363.sol:16",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "transferAndCall(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFromAndCall(address,address,uint256)",
+          "transferFromAndCall(address,address,uint256,bytes)",
+          "approveAndCall(address,uint256)",
+          "approveAndCall(address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:18",
+        "version": {
+          "withMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "withoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c",
+          "linkedWithoutMetadata": "8053e9128b6b27d430f95a7f02271b110dfa42754f815f5869fb65036fe3391c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictLensSmartMedia.sol:PredictLensSmartMedia": {
+        "src": "contracts/PredictLensSmartMedia.sol:13",
+        "version": {
+          "withMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "withoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c",
+          "linkedWithoutMetadata": "08a7706dd36b4f4034d60793709140d781cc52aa40b9766e4dd5c5788d2aa06c"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "getTemplateInfo(address,uint256)",
+          "hasUsedTemplate(address,uint256,address)",
+          "updateTemplateData(address,uint256,string)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictLensSmartMedia",
+            "src": "contracts/PredictLensSmartMedia.sol:38"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictLensSmartMedia.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictLensSmartMedia",
+              "label": "templates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))",
+              "src": "contracts/PredictLensSmartMedia.sol:28"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Template)671_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictLensSmartMedia.Template))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Template)671_storage)": {
+              "label": "mapping(uint256 => struct PredictLensSmartMedia.Template)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Template)671_storage": {
+              "label": "struct PredictLensSmartMedia.Template",
+              "members": [
+                {
+                  "label": "templateType",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "templateData",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "usageCount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userHasUsed",
+                  "type": "t_mapping(t_address,t_bool)"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/PredictionMarket.sol:PredictionMarket": {
+        "src": "contracts/PredictionMarket.sol:15",
+        "version": {
+          "withMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "withoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7",
+          "linkedWithoutMetadata": "a3788d4c4e19e278304247e6527cd245b4a612ed1d312c8e2483b85716a4a0e7"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address,address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "resolveMarket(address,uint256,uint8)",
+          "claimRewards(address,uint256)",
+          "getMarketInfo(address,uint256)",
+          "getUserStake(address,uint256,address,uint8)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "PredictionMarket",
+            "src": "contracts/PredictionMarket.sol:54"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/PredictionMarket.sol:19"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "stakingToken",
+            "src": "contracts/PredictionMarket.sol:38"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "creatorFeeBps",
+            "src": "contracts/PredictionMarket.sol:41"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "PredictionMarket",
+              "label": "markets",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))",
+              "src": "contracts/PredictionMarket.sol:35"
+            },
+            {
+              "contract": "PredictionMarket",
+              "label": "creatorFeeBps",
+              "type": "t_uint16",
+              "src": "contracts/PredictionMarket.sol:41"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Market)1175_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct PredictionMarket.Market))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(Market)1175_storage)": {
+              "label": "mapping(uint256 => struct PredictionMarket.Market)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Market)1175_storage": {
+              "label": "struct PredictionMarket.Market",
+              "members": [
+                {
+                  "label": "question",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "resolveTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "resolved",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalStaked",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "optionTotals",
+                  "type": "t_mapping(t_uint8,t_uint256)"
+                },
+                {
+                  "label": "userStakes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                }
+              ]
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_uint16": {
+              "label": "uint16"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/QuadraticVoting.sol:QuadraticVoting": {
+        "src": "contracts/QuadraticVoting.sol:13",
+        "version": {
+          "withMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "withoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3",
+          "linkedWithoutMetadata": "50fc82d34d301c2a5c16966ba1b232f8eb4d8afbe8039c79f87b90027182f8d3"
+        },
+        "inherit": [
+          "interfaces/IPostAction.sol:IPostAction"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])",
+          "finalizeVoting(address,uint256)",
+          "getVotingInfo(address,uint256)",
+          "getUserVotes(address,uint256,address,uint8)",
+          "getUserTotalCost(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "QuadraticVoting",
+            "src": "contracts/QuadraticVoting.sol:41"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "ACTION_HUB",
+            "src": "contracts/QuadraticVoting.sol:15"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "QuadraticVoting",
+              "label": "votingStates",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))",
+              "src": "contracts/QuadraticVoting.sol:30"
+            }
+          ],
+          "types": {
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(VotingState)2020_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct QuadraticVoting.VotingState))"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_uint256,t_struct(VotingState)2020_storage)": {
+              "label": "mapping(uint256 => struct QuadraticVoting.VotingState)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(VotingState)2020_storage": {
+              "label": "struct QuadraticVoting.VotingState",
+              "members": [
+                {
+                  "label": "startTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "endTime",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "finalized",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "winningOption",
+                  "type": "t_uint8"
+                },
+                {
+                  "label": "totalVotesOption0",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "totalVotesOption1",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "userVotes",
+                  "type": "t_mapping(t_address,t_mapping(t_uint8,t_uint256))"
+                },
+                {
+                  "label": "userTotalCost",
+                  "type": "t_mapping(t_address,t_uint256)"
+                }
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_uint8": {
+              "label": "uint8"
+            },
+            "t_mapping(t_address,t_mapping(t_uint8,t_uint256))": {
+              "label": "mapping(address => mapping(uint8 => uint256))"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_uint8,t_uint256)": {
+              "label": "mapping(uint8 => uint256)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPostAction.sol:IPostAction": {
+        "src": "contracts/interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/IPublicationActionModule.sol:IPublicationActionModule": {
+        "src": "contracts/interfaces/IPublicationActionModule.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "initializePublicationAction(uint256,uint256,address,bytes)",
+          "processPublicationAction(uint256,uint256,address,address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "contracts/interfaces/Types.sol:Types": {
+        "src": "contracts/interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "withoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e",
+          "linkedWithoutMetadata": "d60838a46e5342a8ee6b45824ca578cef552f89e1bccb670575f04ca2b60a45e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/IPostAction.sol:IPostAction": {
+        "src": "interfaces/IPostAction.sol:10",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "configure(address,address,uint256,struct Types.KeyValue[])",
+          "execute(address,address,uint256,struct Types.KeyValue[])",
+          "setDisabled(address,address,uint256,bool,struct Types.KeyValue[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      },
+      "interfaces/Types.sol:Types": {
+        "src": "interfaces/Types.sol:8",
+        "version": {
+          "withMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "withoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e",
+          "linkedWithoutMetadata": "1f107096470bb25db18d6cf6bf4da89a9e6e6ecb55e0146a55ab6d269f88bd3e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.24"
+      }
+    }
+  ]
+}
