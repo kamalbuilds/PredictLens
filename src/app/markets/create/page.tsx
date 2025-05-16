@@ -17,7 +17,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { TemplateSelector } from "@/components/template-selector";
 import { MarketForm } from "@/components/market-form";
 import { useAccount } from "wagmi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 // Mock data for templates (simplified from the templates page)
 const mockTemplates = [
@@ -41,7 +41,8 @@ const mockTemplates = [
   },
 ];
 
-export default function CreateMarketPage() {
+// Create a wrapper component that uses useSearchParams
+function CreateMarketContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialTemplateId = searchParams.get("templateId") || undefined;
@@ -136,5 +137,36 @@ export default function CreateMarketPage() {
         </TabsContent>
       </Tabs>
     </div>
+  );
+}
+
+// Loading fallback component
+function LoadingFallback() {
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold">Create a Prediction Market</h1>
+          <p className="text-muted-foreground">
+            Create a new market using Bonsai Smart Media templates
+          </p>
+        </div>
+        <Button asChild variant="outline">
+          <Link href="/markets">Back to Markets</Link>
+        </Button>
+      </div>
+      <div className="h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    </div>
+  );
+}
+
+// Main component that wraps the content in a Suspense boundary
+export default function CreateMarketPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <CreateMarketContent />
+    </Suspense>
   );
 } 
